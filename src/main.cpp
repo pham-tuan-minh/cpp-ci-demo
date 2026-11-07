@@ -5,6 +5,6 @@ int add(int a, int b) {
 }
 
 int main() {
-    std::cout << add(5, 10) << '\n';
+    std::cout << add(5, 10) << '\n'
     return 0;
 }
