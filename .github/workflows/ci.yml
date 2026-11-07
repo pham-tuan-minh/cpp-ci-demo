@@ -1,0 +1,27 @@
+name: C++ CI
+
+# Khi nào workflow được kích hoạt?
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+    branches: [main]
+
+# Các công việc cần thực hiện
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Lấy source code từ repository
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Biên dịch chương trình
+      - name: Build
+        run: g++ -Wall -Wextra -std=c++17 src/main.cpp -o main
+
+      # Chạy chương trình
+      - name: Run
+        run: ./main
